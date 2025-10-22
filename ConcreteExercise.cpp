@@ -21,7 +21,7 @@ namespace algebra
     void ConcreteExercise<T>::task2()
     {
         int k;
-        cout << "Ââåäèòå ÷èñëî K äëÿ âñòàâêè: ";
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ K Ð´Ð»Â¤ Ð²ÑÑ‚Ð°Ð²ÐºÐ¸:  ";
         cin >> k;
 
         size_t originalSize = this->matrix.getSize();
@@ -80,5 +80,6 @@ namespace algebra
     }
 
     template class ConcreteExercise<int>;
+
 
 }
