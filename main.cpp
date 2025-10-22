@@ -13,41 +13,41 @@ int main()
 {
     setlocale(LC_ALL, "RU");
     size_t size;
-    cout << "Ââåäèòå ðàçìåð ìàññèâà: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
     cin >> size;
 
     Matrix<int> matrix(size);
 
     int choice;
-    cout << "Âûáåðèòå ñïîñîá çàïîëíåíèÿ ìàññèâà:\n";
-    cout << "1. Ñëó÷àéíûìè ÷èñëàìè\n";
-    cout << "2. Ââîäîì ñ êëàâèàòóðû\n";
+    cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ ÑÐ¿Ð¾ÑÐ¾Ð± Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ Ð¼Ð°ÑÑÐ¸Ð²Ð°:\n";
+    cout << "1. Ð¡Ð»ÑƒÑ‡Ð°Ð¹Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸\n";
+    cout << "2. Ð’Ð²Ð¾Ð´Ð¾Ð¼ Ñ ÐºÐ»Ð°Ð²Ð¸Ð°Ñ‚ÑƒÑ€Ñ‹\n";
     cin >> choice;
 
     Generator* generator;
     if (choice == 1)
     {
         generator = new RandomGenerator();
-        cout << "Ìàññèâ áóäåò çàïîëíåí ñëó÷àéíûìè ÷èñëàìè îò -1000 äî 1000" << endl;
+        cout << "ÐœÐ°ÑÑÐ¸Ð² Ð±ÑƒÐ´ÐµÑ‚ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½ ÑÐ»ÑƒÑ‡Ð°Ð¹Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸ Ð¾Ñ‚ -1000 Ð´Ð¾ 1000" << endl;
     }
     else
     {
         generator = new IStreamGenerator(cin);
-        cout << "Ââåäèòå ýëåìåíòû ìàññèâà:" << endl;
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°:" << endl;
     }
 
     matrix.fill(*generator);
-    cout << "Èñõîäíûé ìàññèâ: " << matrix << endl;
+    cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: " << matrix << endl;
 
     ConcreteExercise<int> exercise(matrix, *generator);
     exercise.task1();
-    cout << "Ìàññèâ ïîñëå âûïîëíåíèÿ 1 óñëîâèÿ: " << exercise.getMatrix() << endl;
+    cout << "ÐœÐ°ÑÑÐ¸Ð² Ð¿Ð¾ÑÐ»Ðµ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ 1 ÑƒÑÐ»Ð¾Ð²Ð¸Ñ: " << exercise.getMatrix() << endl;
 
     exercise.task2();
-    cout << "Ìàññèâ ïîñëå âûïîëíåíèÿ 2 óñëîâèÿ: " << exercise.getMatrix() << endl;
+    cout << "ÐœÐ°ÑÑÐ¸Ð² Ð¿Ð¾ÑÐ»Ðµ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ 2 ÑƒÑÐ»Ð¾Ð²Ð¸Ñ: " << exercise.getMatrix() << endl;
 
     exercise.task3();
-    cout << "Ìàññèâ ïîñëå âûïîëíåíèÿ 3 óñëîâèÿ: " << exercise.getMatrix() << endl;
+    cout << "ÐœÐ°ÑÑÐ¸Ð² Ð¿Ð¾ÑÐ»Ðµ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ 3 ÑƒÑÐ»Ð¾Ð²Ð¸Ñ: " << exercise.getMatrix() << endl;
 
     delete generator;
 
