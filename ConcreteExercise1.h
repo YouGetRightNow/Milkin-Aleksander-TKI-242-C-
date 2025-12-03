@@ -8,7 +8,7 @@ namespace algebra
 {
     
     /**
-     * @brief Класс, реализующий конкретное упражнение на основе матрицы и генератора.
+     * @brief РљР»Р°СЃСЃ, СЂРµР°Р»РёР·СѓСЋС‰РёР№ РєРѕРЅРєСЂРµС‚РЅРѕРµ СѓРїСЂР°Р¶РЅРµРЅРёРµ РЅР° РѕСЃРЅРѕРІРµ РјР°С‚СЂРёС†С‹ Рё РіРµРЅРµСЂР°С‚РѕСЂР°.
      */
     template <typename T>
     class ConcreteExercise1 : public Exercise<T>
@@ -16,14 +16,14 @@ namespace algebra
     public:
         
         /**
-         * @brief Конструктор класса ConcreteExercise.
-         * @param matrix Матрица для упражнения.
-         * @param generator Генератор для заполнения матрицы и выполнения задач.
+         * @brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° ConcreteExercise.
+         * @param matrix РњР°С‚СЂРёС†Р° РґР»СЏ СѓРїСЂР°Р¶РЅРµРЅРёСЏ.
+         * @param generator Р“РµРЅРµСЂР°С‚РѕСЂ РґР»СЏ Р·Р°РїРѕР»РЅРµРЅРёСЏ РјР°С‚СЂРёС†С‹ Рё РІС‹РїРѕР»РЅРµРЅРёСЏ Р·Р°РґР°С‡.
          */
         ConcreteExercise1(Matrix<T> matrix, Generator& generator);
 
         /**
-         * @brief Реализация задачи 1.
+         * @brief Р РµР°Р»РёР·Р°С†РёСЏ Р·Р°РґР°С‡Рё 1.
          * @override
          */
         void task() override;
