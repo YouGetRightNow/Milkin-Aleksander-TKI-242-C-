@@ -11,7 +11,7 @@ namespace algebra
     template <typename T>
     class Exercise
     {
-    private:
+    protected:
         
         /**
          * @brief Матрица, используемая в упражнении.
@@ -38,19 +38,9 @@ namespace algebra
         virtual ~Exercise() = default;
 
         /**
-         * @brief Первая задача (абстрактный метод).
+         * @brief Задача (абстрактный метод).
          */
-        virtual void task1() = 0;
-
-        /**
-         * @brief Вторая задача (абстрактный метод).
-         */
-        virtual void task2() = 0;
-
-        /**
-         * @brief Третья задача (абстрактный метод).
-         */
-        virtual void task3() = 0;
+        virtual void task() = 0;
 
         /**
          * @brief Возвращает ссылку на матрицу.
@@ -69,5 +59,6 @@ namespace algebra
     {
         return matrix;
     }
-
 }
+}
+
