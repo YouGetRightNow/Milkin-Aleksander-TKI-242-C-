@@ -13,7 +13,7 @@ namespace algebra
         /**
          * @brief ¬иртуальный деструктор.
          */
-        virtual ~Generator() = 0;
+        virtual ~Generator() = default;
 
         /**
          * @brief јбстрактный метод дл¤ генерации случайного числа.
@@ -22,3 +22,4 @@ namespace algebra
         virtual int generate() = 0;
     };
 }
+
