@@ -77,7 +77,7 @@ namespace algebra {
 	TEST(ConcreteExercise1Test, TaskSetsFirstToZeroIfDivisibleBy5) 
 	{
 		Matrix<int> m(3);
-		m[0] = 15;  // делится на 5
+		m[0] = 15; 
 		m[1] = 7;
 		m[2] = 9;
 
@@ -248,4 +248,5 @@ int main(int argc, char** argv)
 {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
+
 }
