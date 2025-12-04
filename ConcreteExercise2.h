@@ -20,7 +20,7 @@ namespace algebra
 		 * @param matrix Матрица для упражнения.
 		 * @param generator Генератор для заполнения матрицы и выполнения задач.
 		 */
-		ConcreteExercise2(Matrix<T> matrix, Generator& generator);
+		ConcreteExercise2(const Matrix<T> matrix, Generator& generator);
 
 		/**
 		 * @brief Реализация задачи 2.
@@ -30,3 +30,4 @@ namespace algebra
 
 	};
 }
+
