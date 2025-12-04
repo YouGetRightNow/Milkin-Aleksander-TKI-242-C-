@@ -11,7 +11,7 @@ namespace algebra
 	template <typename T>
 	void ConcreteExercise2<T>::task()
 	{
-		int k;
+		int k = 0;
 		cout << "Введите число К: ";
 		cin >> k;
 
@@ -51,3 +51,4 @@ namespace algebra
 
 
 }
+
