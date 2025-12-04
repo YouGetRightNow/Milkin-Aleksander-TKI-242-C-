@@ -5,60 +5,59 @@
 
 namespace algebra
 {
-    /**
-     * @brief Абстрактный базовый класс для упражнений, содержащих матрицу и генератор.
-     */
-    template <typename T>
-    class Exercise
-    {
-    protected:
-        
-        /**
-         * @brief Матрица, используемая в упражнении.
-         */
-        Matrix<T> matrix;
+	/**
+	 * @brief Абстрактный базовый класс для упражнений, содержащих матрицу и генератор.
+	 */
+	template <typename T>
+	class Exercise
+	{
+	protected:
 
-        /**
-         * @brief Генератор случайных чисел, используемый в упражнении.
-         */
-        Generator& generator;
+		/**
+		 * @brief Матрица, используемая в упражнении.
+		 */
+		Matrix<T> matrix;
 
-    public:
-        
-        /**
-         * @brief Конструктор класса Exercise.
-         * @param matrix Матрица, используемая в упражнении.
-         * @param generator Генератор случайных чисел, используемый в упражнении.
-         */
-        Exercise(Matrix<T> matrix, Generator& generator);
+		/**
+		 * @brief Генератор случайных чисел, используемый в упражнении.
+		 */
+		Generator& generator;
 
-        /**
-         * @brief Виртуальный деструктор.
-         */
-        virtual ~Exercise() = default;
+	public:
 
-        /**
-         * @brief Задача (абстрактный метод).
-         */
-        virtual void task() = 0;
+		/**
+		 * @brief Конструктор класса Exercise.
+		 * @param matrix Матрица, используемая в упражнении.
+		 * @param generator Генератор случайных чисел, используемый в упражнении.
+		 */
+		Exercise(const Matrix<T>& matrix, Generator& generator);
 
-        /**
-         * @brief Возвращает ссылку на матрицу.
-         * @return Ссылка на матрицу.
-         */
-        Matrix<T>& getMatrix();
-    };
+		/**
+		 * @brief Виртуальный деструктор.
+		 */
+		virtual ~Exercise() = default;
 
-    template <typename T>
-    
-    /**
-     * @brief Возвращает ссылку на матрицу.
-     * @return Ссылка на матрицу.
-     */
-    inline Matrix<T>& Exercise<T>::getMatrix()
-    {
-        return matrix;
-    }
+		/**
+		 * @brief Задача (абстрактный метод).
+		 */
+		virtual void task() = 0;
+
+		/**
+		 * @brief Возвращает ссылку на матрицу.
+		 * @return Ссылка на матрицу.
+		 */
+		Matrix<T>& getMatrix();
+	};
+
+	template <typename T>
+
+	/**
+	 * @brief Возвращает ссылку на матрицу.
+	 * @return Ссылка на матрицу.
+	 */
+	inline Matrix<T>& Exercise<T>::getMatrix()
+	{
+		return matrix;
+	}
+
 }
-}
-
