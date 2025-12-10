@@ -13,10 +13,10 @@ Patient::Patient(const std::string& firstName, const std::string& lastName,
 std::string Patient::getInfo() const 
 {
     std::stringstream ss;
-    ss << "Ïàöèåíò: " << getFullName() << "\n"
-        << "Âîçðàñò: " << age << " ëåò\n"
-        << "Íîìåð ìåä. êàðòû: " << medicalCardNumber << "\n"
-        << "Òåëåôîí: " << phoneNumber << "\n"
-        << "Àäðåñ: " << address << "\n";
+    ss << "ÐŸÐ°Ñ†Ð¸ÐµÐ½Ñ‚: " << getFullName() << "\n"
+        << "Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚: " << age << " Ð»ÐµÑ‚\n"
+        << "ÐÐ¾Ð¼ÐµÑ€ Ð¼ÐµÐ´. ÐºÐ°Ñ€Ñ‚Ñ‹: " << medicalCardNumber << "\n"
+        << "Ð¢ÐµÐ»ÐµÑ„Ð¾Ð½: " << phoneNumber << "\n"
+        << "ÐÐ´Ñ€ÐµÑ: " << address << "\n";
     return ss.str();
 }
