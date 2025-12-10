@@ -31,7 +31,7 @@ std::vector<std::shared_ptr<Doctor>> Polyclinic::getAllDoctors() const
 std::string Polyclinic::getAllDoctorsInfo() const 
 {
     std::stringstream ss;
-    ss << "Ñïèñîê âñåõ âðà÷åé ïîëèêëèíèêè \"" << name << "\":\n";
+    ss << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð²ÑÐµÑ… Ð²Ñ€Ð°Ñ‡ÐµÐ¹ Ð¿Ð¾Ð»Ð¸ÐºÐ»Ð¸Ð½Ð¸ÐºÐ¸ \"" << name << "\":\n";
     ss << "========================================\n";
 
     for (const auto& doctor : doctors) 
@@ -64,7 +64,7 @@ std::vector<std::shared_ptr<Patient>> Polyclinic::getAllPatients() const
 std::string Polyclinic::getAllPatientsInfo() const 
 {
     std::stringstream ss;
-    ss << "Ñïèñîê âñåõ ïàöèåíòîâ ïîëèêëèíèêè \"" << name << "\":\n";
+    ss << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð²ÑÐµÑ… Ð¿Ð°Ñ†Ð¸ÐµÐ½Ñ‚Ð¾Ð² Ð¿Ð¾Ð»Ð¸ÐºÐ»Ð¸Ð½Ð¸ÐºÐ¸ \"" << name << "\":\n";
     ss << "========================================\n";
 
     for (const auto& patient : patients) 
@@ -96,7 +96,7 @@ std::vector<std::shared_ptr<Appointment>> Polyclinic::getAllAppointments() const
 std::string Polyclinic::getAllAppointmentsInfo() const 
 {
     std::stringstream ss;
-    ss << "Ñïèñîê âñåõ çàïèñåé íà ïðèåì:\n";
+    ss << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð²ÑÐµÑ… Ð·Ð°Ð¿Ð¸ÑÐµÐ¹ Ð½Ð° Ð¿Ñ€Ð¸ÐµÐ¼:\n";
     ss << "========================================\n";
 
     for (const auto& appointment : appointments) 
@@ -115,7 +115,7 @@ void Polyclinic::addSchedule(std::shared_ptr<Schedule> schedule)
 std::string Polyclinic::getAllSchedulesInfo() const 
 {
     std::stringstream ss;
-    ss << "Ðàñïèñàíèå ðàáîòû âðà÷åé:\n";
+    ss << "Ð Ð°ÑÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ð²Ñ€Ð°Ñ‡ÐµÐ¹:\n";
     ss << "========================================\n";
 
     for (const auto& schedule : schedules) 
