@@ -14,12 +14,12 @@ Doctor::Doctor(const std::string& firstName, const std::string& lastName,
 std::string Doctor::getInfo() const 
 {
     std::stringstream ss;
-    ss << "Äîêòîð: " << getFullName() << "\n"
-        << "Ñïåöèàëèçàöèÿ: " << specialization << "\n"
-        << "Âîçðàñò: " << age << " ëåò\n"
-        << "Îïûò ðàáîòû: " << experienceYears << " ëåò\n"
-        << "Êàáèíåò: " << cabinetNumber << "\n"
-        << "Íîìåð ëèöåíçèè: " << licenseNumber << "\n";
+    ss << "Ð”Ð¾ÐºÑ‚Ð¾Ñ€: " << getFullName() << "\n"
+        << "Ð¡Ð¿ÐµÑ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ: " << specialization << "\n"
+        << "Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚: " << age << " Ð»ÐµÑ‚\n"
+        << "ÐžÐ¿Ñ‹Ñ‚ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹: " << experienceYears << " Ð»ÐµÑ‚\n"
+        << "ÐšÐ°Ð±Ð¸Ð½ÐµÑ‚: " << cabinetNumber << "\n"
+        << "ÐÐ¾Ð¼ÐµÑ€ Ð»Ð¸Ñ†ÐµÐ½Ð·Ð¸Ð¸: " << licenseNumber << "\n";
 
     return ss.str();
 }
