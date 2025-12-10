@@ -13,13 +13,13 @@ Appointment::Appointment(std::shared_ptr<Doctor> doctor,
 std::string Appointment::getInfo() const 
 {
     std::stringstream ss;
-    ss << "Çàïèñü íà ïðèåì:\n"
-        << "Äàòà: " << date << "\n"
-        << "Âðåìÿ: " << time << "\n"
-        << "Âðà÷: " << doctor->getFullName() << " (" << doctor->getSpecialization() << ")\n"
-        << "Ïàöèåíò: " << patient->getFullName() << "\n"
-        << "Öåëü âèçèòà: " << purpose << "\n"
-        << "Ñòàòóñ: " << (isCompleted ? "Çàâåðøåí" : "Çàïëàíèðîâàí") << "\n";
+    ss << "Ð—Ð°Ð¿Ð¸ÑÑŒ Ð½Ð° Ð¿Ñ€Ð¸ÐµÐ¼:\n"
+        << "Ð”Ð°Ñ‚Ð°: " << date << "\n"
+        << "Ð’Ñ€ÐµÐ¼Ñ: " << time << "\n"
+        << "Ð’Ñ€Ð°Ñ‡: " << doctor->getFullName() << " (" << doctor->getSpecialization() << ")\n"
+        << "ÐŸÐ°Ñ†Ð¸ÐµÐ½Ñ‚: " << patient->getFullName() << "\n"
+        << "Ð¦ÐµÐ»ÑŒ Ð²Ð¸Ð·Ð¸Ñ‚Ð°: " << purpose << "\n"
+        << "Ð¡Ñ‚Ð°Ñ‚ÑƒÑ: " << (isCompleted ? "Ð—Ð°Ð²ÐµÑ€ÑˆÐµÐ½" : "Ð—Ð°Ð¿Ð»Ð°Ð½Ð¸Ñ€Ð¾Ð²Ð°Ð½") << "\n";
 
     return ss.str();
 }
