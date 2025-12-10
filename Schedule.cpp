@@ -27,10 +27,10 @@ void Schedule::removeWorkingDay(const std::string& day)
 std::string Schedule::getInfo() const 
 {
     std::stringstream ss;
-    ss << "Ðàñïèñàíèå âðà÷à: " << doctor->getFullName() << "\n"
-        << "Ñïåöèàëèçàöèÿ: " << doctor->getSpecialization() << "\n"
-        << "Êàáèíåò: " << doctor->getCabinetNumber() << "\n"
-        << "Ãðàôèê ðàáîòû:\n";
+    ss << "Ð Ð°ÑÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ Ð²Ñ€Ð°Ñ‡Ð°: " << doctor->getFullName() << "\n"
+        << "Ð¡Ð¿ÐµÑ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ: " << doctor->getSpecialization() << "\n"
+        << "ÐšÐ°Ð±Ð¸Ð½ÐµÑ‚: " << doctor->getCabinetNumber() << "\n"
+        << "Ð“Ñ€Ð°Ñ„Ð¸Ðº Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹:\n";
 
     for (size_t i = 0; i < workingHours.size(); ++i) 
     {
