@@ -10,9 +10,9 @@
 
 void testPerson() {
     std::cout << "Testing Person class...\n";
-    Person* person = new Doctor("Иван", "Иванов", "Иванович", 45,
-        "Терапевт", "LIC123", 20, "101");
-    assert(person->getFullName() == "Иванов Иван Иванович");
+    Person* person = new Doctor("РРІР°РЅ", "РРІР°РЅРѕРІ", "РРІР°РЅРѕРІРёС‡", 45,
+        "РўРµСЂР°РїРµРІС‚", "LIC123", 20, "101");
+    assert(person->getFullName() == "РРІР°РЅРѕРІ РРІР°РЅ РРІР°РЅРѕРІРёС‡");
     assert(person->getAge() == 45);
     delete person;
     std::cout << "Person tests passed!\n";
@@ -20,53 +20,53 @@ void testPerson() {
 
 void testDoctor() {
     std::cout << "Testing Doctor class...\n";
-    Doctor doc("Петр", "Петров", "Петрович", 50,
-        "Хирург", "LIC456", 25, "205");
-    assert(doc.getFullName() == "Петров Петр Петрович");
-    assert(doc.getSpecialization() == "Хирург");
+    Doctor doc("РџРµС‚СЂ", "РџРµС‚СЂРѕРІ", "РџРµС‚СЂРѕРІРёС‡", 50,
+        "РҐРёСЂСѓСЂРі", "LIC456", 25, "205");
+    assert(doc.getFullName() == "РџРµС‚СЂРѕРІ РџРµС‚СЂ РџРµС‚СЂРѕРІРёС‡");
+    assert(doc.getSpecialization() == "РҐРёСЂСѓСЂРі");
     assert(doc.getExperienceYears() == 25);
     std::cout << "Doctor tests passed!\n";
 }
 
 void testPatient() {
     std::cout << "Testing Patient class...\n";
-    Patient patient("Анна", "Сидорова", "Алексеевна", 30,
-        "CARD789", "+79001234567", "ул. Ленина, 10");
-    assert(patient.getFullName() == "Сидорова Анна Алексеевна");
+    Patient patient("РђРЅРЅР°", "РЎРёРґРѕСЂРѕРІР°", "РђР»РµРєСЃРµРµРІРЅР°", 30,
+        "CARD789", "+79001234567", "СѓР». Р›РµРЅРёРЅР°, 10");
+    assert(patient.getFullName() == "РЎРёРґРѕСЂРѕРІР° РђРЅРЅР° РђР»РµРєСЃРµРµРІРЅР°");
     assert(patient.getMedicalCardNumber() == "CARD789");
     std::cout << "Patient tests passed!\n";
 }
 
 void testAppointment() {
     std::cout << "Testing Appointment class...\n";
-    auto doctor = std::make_shared<Doctor>("Иван", "Иванов", "Иванович", 45,
-        "Терапевт", "LIC123", 20, "101");
-    auto patient = std::make_shared<Patient>("Анна", "Сидорова", "Алексеевна", 30,
-        "CARD789", "+79001234567", "ул. Ленина, 10");
-    Appointment appointment(doctor, patient, "2024-01-15", "10:00", "Профилактический осмотр");
+    auto doctor = std::make_shared<Doctor>("РРІР°РЅ", "РРІР°РЅРѕРІ", "РРІР°РЅРѕРІРёС‡", 45,
+        "РўРµСЂР°РїРµРІС‚", "LIC123", 20, "101");
+    auto patient = std::make_shared<Patient>("РђРЅРЅР°", "РЎРёРґРѕСЂРѕРІР°", "РђР»РµРєСЃРµРµРІРЅР°", 30,
+        "CARD789", "+79001234567", "СѓР». Р›РµРЅРёРЅР°, 10");
+    Appointment appointment(doctor, patient, "2024-01-15", "10:00", "РџСЂРѕС„РёР»Р°РєС‚РёС‡РµСЃРєРёР№ РѕСЃРјРѕС‚СЂ");
     assert(appointment.getDate() == "2024-01-15");
-    assert(appointment.getPurpose() == "Профилактический осмотр");
+    assert(appointment.getPurpose() == "РџСЂРѕС„РёР»Р°РєС‚РёС‡РµСЃРєРёР№ РѕСЃРјРѕС‚СЂ");
     std::cout << "Appointment tests passed!\n";
 }
 
 void testSchedule() {
     std::cout << "Testing Schedule class...\n";
-    auto doctor = std::make_shared<Doctor>("Иван", "Иванов", "Иванович", 45,
-        "Терапевт", "LIC123", 20, "101");
+    auto doctor = std::make_shared<Doctor>("РРІР°РЅ", "РРІР°РЅРѕРІ", "РРІР°РЅРѕРІРёС‡", 45,
+        "РўРµСЂР°РїРµРІС‚", "LIC123", 20, "101");
     Schedule schedule(doctor);
-    schedule.addWorkingDay("Понедельник", "09:00-18:00");
-    schedule.addWorkingDay("Среда", "09:00-18:00");
+    schedule.addWorkingDay("РџРѕРЅРµРґРµР»СЊРЅРёРє", "09:00-18:00");
+    schedule.addWorkingDay("РЎСЂРµРґР°", "09:00-18:00");
     assert(schedule.getWorkingHours().size() == 2);
     std::cout << "Schedule tests passed!\n";
 }
 
 void testPolyclinic() {
     std::cout << "Testing Polyclinic class...\n";
-    Polyclinic polyclinic("Городская поликлиника №56", "ул. Образцова, 2", "+74951256666");
-    assert(polyclinic.getName() == "Городская поликлиника №56");
+    Polyclinic polyclinic("Р“РѕСЂРѕРґСЃРєР°СЏ РїРѕР»РёРєР»РёРЅРёРєР° в„–56", "СѓР». РћР±СЂР°Р·С†РѕРІР°, 2", "+74951256666");
+    assert(polyclinic.getName() == "Р“РѕСЂРѕРґСЃРєР°СЏ РїРѕР»РёРєР»РёРЅРёРєР° в„–56");
 
-    auto doctor = std::make_shared<Doctor>("Иван", "Иванов", "Иванович", 45,
-        "Терапевт", "LIC123", 20, "101");
+    auto doctor = std::make_shared<Doctor>("РРІР°РЅ", "РРІР°РЅРѕРІ", "РРІР°РЅРѕРІРёС‡", 45,
+        "РўРµСЂР°РїРµРІС‚", "LIC123", 20, "101");
     polyclinic.addDoctor(doctor);
     assert(polyclinic.getAllDoctors().size() == 1);
     std::cout << "Polyclinic tests passed!\n";
