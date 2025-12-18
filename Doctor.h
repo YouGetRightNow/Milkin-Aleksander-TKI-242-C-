@@ -16,7 +16,7 @@ private:
     std::string licenseNumber;   
     int experienceYears;         
     std::string cabinetNumber;   
-
+    std::vector<std::pair<std::string, std::string>> workSchedule;
 public:
 
     /**
@@ -65,6 +65,8 @@ public:
      */
     const std::string& getCabinetNumber() const { return cabinetNumber; }
 
+    void setSchedule(const std::vector<std::pair<std::string, std::string>>& sched) {
+        workSchedule = sched; } 
     /**
      * @brief Установить специализацию врача
      * @param spec Новая специализация
@@ -77,3 +79,4 @@ public:
      */
     void setCabinetNumber(const std::string& cabinet) { cabinetNumber = cabinet; }
 };
+
