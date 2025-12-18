@@ -23,39 +23,48 @@ int main()
 
     Matrix<int> matrix(size);
 
-	enum FillMethod { MANUAL, RANDOM };
-
-    cout << "Выберите способ заполнения массива ("
-              << MANUAL << " - ручной ввод, "
-              << RANDOM << " - случайные числа): ";
-
+	enum FillMethod { MANUAL, RANDOM, CONSTANT };
+	
+	cout << "Выберите способ заполнения массива ("
+		<< MANUAL << " - ручной ввод, "
+		<< RANDOM << " - случайные числа, "
+		<< CONSTANT << " - постоянное значение): ";
     int choice;
     cin >> choice;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     Generator* generator = nullptr;
 
-    switch ((FillMethod)choice)
-    {
-        case MANUAL:
-        {
-            generator = new IStreamGenerator(cin);
-            cout << "Введите элементы массива:" << endl;
-        }
-        break;
+	switch ((FillMethod)choice)
+	{
+	case MANUAL:
+	{
+		generator = new IStreamGenerator(cin);
+		cout << "Введите элементы массива:" << endl;
+	}
+	break;
 
-        case RANDOM:
-        {
-            generator = new RandomGenerator();
-            cout << "Массив будет заполнен случайными числами от -1000 до 1000" << endl;
-        }
-        break;
+	case RANDOM:
+	{
+		generator = new RandomGenerator();
+		cout << "Массив будет заполнен случайными числами от -1000 до 1000" << endl;
+	}
+	break;
+	case CONSTANT:
+	{
+		int constValue = 0;
+		cout << "Введите постоянное значение: ";
+		cin >> constValue;
+		generator = new ConstGenerator(constValue);
+		cout << "Массив будет заполнен значением " << constValue << endl;
+	}
+	break;
 
-        default:
-            cout << "Неверный выбор. Будет использован случайный генератор." << endl;
-            generator = new RandomGenerator();
-            break;
-    }
+	default:
+		cout << "Неверный выбор. Будет использован случайный генератор." << endl;
+		generator = new RandomGenerator();
+		break;
+	}
 
 
     matrix.fill(*generator);
@@ -77,3 +86,4 @@ int main()
 
     return 0;
 }
+
