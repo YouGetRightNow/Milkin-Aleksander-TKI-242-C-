@@ -28,6 +28,27 @@ private:
 public:
 
     /**
+     * @brief Найти врача по номеру документа
+     * @param documentId Номер документа
+     * @return Указатель на врача или nullptr
+     */
+    std::shared_ptr<Doctor> findDoctorByDocument(const std::string& documentId) const;
+
+    /**
+     * @brief Найти пациента по номеру документа
+     * @param documentId Номер документа
+     * @return Указатель на пациента или nullptr
+     */
+    std::shared_ptr<Patient> findPatientByDocument(const std::string& documentId) const;
+
+    /**
+     * @brief Проверить уникальность документа
+     * @param documentId Номер документа
+     * @return true если документ уникален
+     */
+    bool isDocumentUnique(const std::string& documentId) const;
+
+    /**
      * @brief Конструктор класса Polyclinic
      * @param name Название поликлиники
      * @param address Адрес поликлиники
@@ -139,3 +160,4 @@ public:
     const std::string& getPhoneNumber() const { return phoneNumber; }
 
 };
+
