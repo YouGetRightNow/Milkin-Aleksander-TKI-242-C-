@@ -30,7 +30,7 @@ namespace algebra
 		 * @param matrix Матрица, используемая в упражнении.
 		 * @param generator Генератор случайных чисел, используемый в упражнении.
 		 */
-		Exercise(const Matrix<T>& matrix, Generator& generator);
+		Exercise(const Matrix<T>& matrix, const Generator& generator);
 
 		/**
 		 * @brief Виртуальный деструктор.
@@ -61,3 +61,4 @@ namespace algebra
 	}
 
 }
+
