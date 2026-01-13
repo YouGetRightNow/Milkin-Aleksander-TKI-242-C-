@@ -109,7 +109,7 @@ namespace algebra
          * @brief Заполняет матрицу случайными числами с использованием генератора.
          * @param generator Ссылка на объект генератора.
          */
-        void fill(Generator& generator);
+        void fill(const Generator& generator);
 
         /**
          * @brief Возвращает размер матрицы.
@@ -119,3 +119,4 @@ namespace algebra
     };
 
 }
+
