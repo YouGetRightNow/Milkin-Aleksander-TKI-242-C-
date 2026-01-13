@@ -5,17 +5,17 @@
 #include <memory>
 #include <vector>
 
- /**
-  * @brief Абстрактный базовый класс, представляющий человека в системе
-  */
+/**
+ * @brief Абстрактный базовый класс, представляющий человека в системе
+ */
 class Person 
 {
 protected:
-
     std::string firstName;  
     std::string lastName;   
     std::string middleName; 
-    int age;                
+    int age;
+    std::string documentId;
 
 public:
     /**
@@ -24,9 +24,11 @@ public:
      * @param lastName Фамилия человека
      * @param middleName Отчество человека
      * @param age Возраст человека
+     * @param documentId Уникальный идентификатор документа
      */
     Person(const std::string& firstName, const std::string& lastName,
-        const std::string& middleName, int age);
+           const std::string& middleName, int age,
+           const std::string& documentId);
 
     /**
      * @brief Виртуальный деструктор
@@ -45,27 +47,13 @@ public:
      */
     virtual std::string getInfo() const = 0;
 
-    /**
-     * @brief Получить имя человека
-     * @return Имя человека
-     */
+    
     const std::string& getFirstName() const { return firstName; }
-
-    /**
-     * @brief Получить фамилию человека
-     * @return Фамилия человека
-     */
     const std::string& getLastName() const { return lastName; }
-
-    /**
-     * @brief Получить отчество человека
-     * @return Отчество человека
-     */
     const std::string& getMiddleName() const { return middleName; }
-
-    /**
-     * @brief Получить возраст человека
-     * @return Возраст человека
-     */
     int getAge() const { return age; }
+    const std::string& getDocumentId() const { return documentId; }
+    
+    
+    void setDocumentId(const std::string& id) { documentId = id; }
 };
