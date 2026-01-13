@@ -2,8 +2,10 @@
 #include <sstream>
 
 Person::Person(const std::string& firstName, const std::string& lastName,
-    const std::string& middleName, int age)
-    : firstName(firstName), lastName(lastName), middleName(middleName), age(age) 
+               const std::string& middleName, int age,
+               const std::string& documentId)
+    : firstName(firstName), lastName(lastName), 
+      middleName(middleName), age(age), documentId(documentId) 
 {
 }
 
