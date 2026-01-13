@@ -2,38 +2,32 @@
 #define DOCTOR_H
 
 #include "Person.h"
+#include "Schedule.h"
 #include <string>
 #include <vector>
+#include <memory>
 
- /**
-  * @brief Класс, представляющий врача поликлиники
-  */
+/**
+ * @brief Класс, представляющий врача поликлиники
+ */
 class Doctor : public Person 
 {
 private:
-
     std::string specialization; 
     std::string licenseNumber;   
     int experienceYears;         
-    std::string cabinetNumber;   
-    std::vector<std::pair<std::string, std::string>> workSchedule;
-public:
+    std::string cabinetNumber;
+    std::shared_ptr<Schedule> schedule; // Связь с расписанием
 
+public:
     /**
      * @brief Конструктор класса Doctor
-     * @param firstName Имя врача
-     * @param lastName Фамилия врача
-     * @param middleName Отчество врача
-     * @param age Возраст врача
-     * @param specialization Специализация врача
-     * @param licenseNumber Номер лицензии
-     * @param experienceYears Стаж работы в годах
-     * @param cabinetNumber Номер кабинета
      */
     Doctor(const std::string& firstName, const std::string& lastName,
-        const std::string& middleName, int age,
-        const std::string& specialization, const std::string& licenseNumber,
-        int experienceYears, const std::string& cabinetNumber);
+           const std::string& middleName, int age,
+           const std::string& documentId,
+           const std::string& specialization, const std::string& licenseNumber,
+           int experienceYears, const std::string& cabinetNumber);
 
     /**
      * @brief Реализация виртуального метода getInfo()
@@ -41,42 +35,19 @@ public:
      */
     std::string getInfo() const override;
 
-    /**
-     * @brief Получить специализацию врача
-     * @return Специализация врача
-     */
     const std::string& getSpecialization() const { return specialization; }
-
-    /**
-     * @brief Получить номер лицензии врача
-     * @return Номер лицензии
-     */
     const std::string& getLicenseNumber() const { return licenseNumber; }
-
-    /**
-     * @brief Получить стаж работы врача
-     * @return Стаж работы в годах
-     */
     int getExperienceYears() const { return experienceYears; }
-
-    /**
-     * @brief Получить номер кабинета врача
-     * @return Номер кабинета
-     */
     const std::string& getCabinetNumber() const { return cabinetNumber; }
+    std::shared_ptr<Schedule> getSchedule() const { return schedule; }
 
-    void setSchedule(const std::vector<std::pair<std::string, std::string>>& sched) {
-        workSchedule = sched; } 
-    /**
-     * @brief Установить специализацию врача
-     * @param spec Новая специализация
-     */
     void setSpecialization(const std::string& spec) { specialization = spec; }
-
-    /**
-     * @brief Установить номер кабинета врача
-     * @param cabinet Новый номер кабинета
-     */
     void setCabinetNumber(const std::string& cabinet) { cabinetNumber = cabinet; }
+    void setSchedule(std::shared_ptr<Schedule> newSchedule) { schedule = newSchedule; }
+    
+    /**
+     * @brief Создать новое расписание для врача
+     * @return Указатель на созданное расписание
+     */
+    std::shared_ptr<Schedule> createSchedule();
 };
-
