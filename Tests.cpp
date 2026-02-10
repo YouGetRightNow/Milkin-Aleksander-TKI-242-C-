@@ -81,3 +81,4 @@ void runAllTests() {
     testPolyclinic();
     std::cout << "\nAll tests passed successfully!\n";
 }
+
