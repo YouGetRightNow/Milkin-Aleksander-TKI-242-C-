@@ -11,22 +11,22 @@ int main()
     setlocale(LC_ALL, "RU");
     std::string name1, name2;
 
-    std::cout << "Ââåäèòå èìÿ ïåðâîãî ôàéëà: ";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð°: ";
     std::cin >> name1;
-    std::cout << "Ââåäèòå èìÿ âòîðîãî ôàéëà: ";
+    std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð°: ";
     std::cin >> name2;
 
     std::ifstream file1(name1);
     if (!file1.is_open()) 
     {
-        std::cerr << "Îøèáêà îòêðûòèÿ ôàéëà " << name1 << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð° " << name1 << std::endl;
         return 1;
     }
 
     std::ifstream file2(name2);
     if (!file2.is_open()) 
     {
-        std::cerr << "Îøèáêà îòêðûòèÿ ôàéëà " << name2 << std::endl;
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð°Ð¹Ð»Ð° " << name2 << std::endl;
         return 1;
     }
 
@@ -39,7 +39,7 @@ int main()
         std::back_inserter(result),
         std::greater<int>());
 
-    std::cout << "Îáúåäèíåííàÿ ïîñëåäîâàòåëüíîñòü (ïî óáûâàíèþ):" << std::endl;
+    std::cout << "ÐžÐ±ÑŠÐµÐ´Ð¸Ð½ÐµÐ½Ð½Ð°Ñ Ð¿Ð¾ÑÐ»ÐµÐ´Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚ÑŒ (Ð¿Ð¾ ÑƒÐ±Ñ‹Ð²Ð°Ð½Ð¸ÑŽ):" << std::endl;
     std::copy(result.begin(), result.end(),
         std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
