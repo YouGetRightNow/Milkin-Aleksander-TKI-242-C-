@@ -1,46 +1,40 @@
 #include <iostream>
 #include <deque>
-#include <cstdlib>
-#include <ctime>
 #include <locale.h>
-using namespace std;
 
 int main() 
 {
     setlocale(LC_ALL, "RU");
-    srand(time(0));
-    deque<int> D;
-    int N = 16;
+    std::deque<int> D;
+    int value;
 
-    cout << "Èñõîäíûé äåê (ðàçìåð " << N << "): ";
-    for (int i = 0; i < N; i++) {
-        D.push_back(rand() % 100);
-        cout << D[i] << " ";
-    }
-    cout << endl;
-
-    int iterations = N / 4;
-
-    deque<int>::iterator i = D.begin();
-    i++;
-
-    for (int k = 0; k < iterations; k++) 
+    while (std::cin >> value) 
     {
+        D.push_back(value);
+    }
+
+    int N = D.size();
+
+    if (N % 4 != 0) 
+    {
+        std::cerr << "ÐžÑˆÐ¸Ð±ÐºÐ°: ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² (" << N << ") Ð½Ðµ ÐºÑ€Ð°Ñ‚Ð½Ð¾ 4" << std::endl;
+        return 1;
+    }
+
+    int removal = N / 4;
+    auto i = D.begin();
+
+    for (int count = 0; count < removal; ++count) 
+    {
+        ++i;
         i = D.erase(i);
-
-        if (k < iterations - 1) 
-        {
-            i++;
-        }
     }
 
-
-    cout << "\nÄåê ïîñëå óäàëåíèÿ (ðàçìåð " << D.size() << "): ";
-    for (int val : D) 
+    for (int x : D) 
     {
-        cout << val << " ";
+        std::cout << x << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 
     return 0;
 }
