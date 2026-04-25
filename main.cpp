@@ -10,7 +10,7 @@ int main()
 {
     setlocale(LC_ALL, "RU");
     vector<int> V = { 5, 2, 8, 2, 5, 6, 8, 1, 9, 2, 5 };
-    cout << "Èñõîäíûé âåêòîð V: ";
+    cout << "Ð˜ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð²ÐµÐºÑ‚Ð¾Ñ€ V: ";
     for_each(V.begin(), V.end(), [](int value) 
         {
         cout << value << " ";
@@ -24,7 +24,7 @@ int main()
         M[value]++;
         });
 
-    cout << "Ýëåìåíò | Êîëè÷åñòâî ïîâòîðåíèé" << endl;
+    cout << "Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚ | ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€ÐµÐ½Ð¸Ð¹" << endl;
     cout << "------------------------" << endl;
 
     for_each(M.begin(), M.end(), [](const auto& pair) 
