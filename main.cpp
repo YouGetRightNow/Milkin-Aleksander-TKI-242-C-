@@ -1,39 +1,39 @@
 #include <iostream>
 #include <deque>
 #include <locale.h>
+#include <algorithm>
+#include <iterator>
 
-int main() 
+int main()
 {
     setlocale(LC_ALL, "RU");
-    std::deque<int> D;
+    std::deque<int> d;
     int value;
 
-    while (std::cin >> value) 
+    while (std::cin >> value)
     {
-        D.push_back(value);
+        d.push_back(value);
     }
 
-    int N = D.size();
+    size_t n = d.size();
 
-    if (N % 4 != 0) 
+    if (n % 4 != 0)
     {
-        std::cerr << "Ошибка: количество элементов (" << N << ") не кратно 4" << std::endl;
+        std::cerr << "Ошибка: количество элементов (" << n << ") не кратно 4" << std::endl;
         return 1;
     }
 
-    int removal = N / 4;
-    auto i = D.begin();
+    size_t removal = n / 4;
 
-    for (int count = 0; count < removal; ++count) 
+    auto i = d.begin();
+
+    for (size_t count = 0; count < removal; ++count)
     {
         ++i;
-        i = D.erase(i);
+        i = d.erase(i);
     }
 
-    for (int x : D) 
-    {
-        std::cout << x << " ";
-    }
+    std::copy(d.begin(), d.end(), std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
 
     return 0;
