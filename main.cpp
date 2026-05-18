@@ -4,41 +4,36 @@
 #include <functional>
 #include <cmath>
 #include <locale.h>
+#include <iterator>
 
 using namespace std;
 
-struct less_abs : public binary_function<int, int, bool> 
+struct less_abs : public binary_function<int, int, bool>
 {
-    bool operator()(int a, int b) const 
+    bool operator()(int a, int b) const
     {
         return abs(a) < abs(b);
     }
 };
 
-int main() 
+int main()
 {
     setlocale(LC_ALL, "RU");
     vector<int> V;
-    int n;
 
-    cout << "Введите количество элементов вектора: ";
-    cin >> n;
+    cout << "Введите целые числа: ";
 
-    cout << "Введите " << n << " целых чисел: ";
-    for (int i = 0; i < n; i++) 
-    {
-        int x;
-        cin >> x;
-        V.push_back(x);
-    }
+    copy(istream_iterator<int>(cin),
+        istream_iterator<int>(),
+        back_inserter(V));
 
     auto it = adjacent_find(V.begin(), V.end(), not2(less_abs()));
 
-    if (it != V.end()) 
+    if (it != V.end())
     {
         cout << *it << " " << *(it + 1) << endl;
     }
-    else 
+    else
     {
         cout << "0" << endl;
     }
