@@ -8,12 +8,9 @@ int main()
 {
     setlocale(LC_ALL, "RU");
     std::deque<int> d;
-    int value;
-
-    while (std::cin >> value)
-    {
-        d.push_back(value);
-    }
+    std::copy(std::istream_iterator<int>(std::cin),
+        std::istream_iterator<int>(),
+        std::back_inserter(d));
 
     size_t n = d.size();
 
