@@ -10,7 +10,7 @@ using namespace std;
 
 struct less_abs : public binary_function<int, int, bool>
 {
-    bool operator()(int a, int b) const
+    bool operator()(const int a, const int b) const
     {
         return abs(a) < abs(b);
     }
