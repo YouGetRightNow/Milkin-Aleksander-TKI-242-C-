@@ -2,6 +2,7 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <iterator>
 #include <locale.h>
 
 using namespace std;
@@ -11,25 +12,21 @@ int main()
     setlocale(LC_ALL, "RU");
     
     vector<int> V;
-    int n, element;
+    int n;
     
     cout << "Введите количество элементов вектора: ";
     cin >> n;
     
     cout << "Введите " << n << " целых чисел:" << endl;
-    for (int i = 0; i < n; i++) 
-    {
-        cout << "Элемент " << i + 1 << ": ";
-        cin >> element;
-        V.push_back(element);
-    }
+    
+    copy_n(istream_iterator<int>(cin), n, back_inserter(V));
     
     cout << "\nИсходный вектор V: ";
     for_each(V.begin(), V.end(), [](int value) 
     {
         cout << value << " ";
     });
-    cout << endl << endl;
+    cout << "\n\n";
 
     map<int, int> M;
 
@@ -41,9 +38,9 @@ int main()
     cout << "Элемент | Количество повторений" << endl;
     cout << "------------------------" << endl;
 
-    for_each(M.begin(), M.end(), [](const auto& pair) 
+    for_each(M.begin(), M.end(), [](const pair<int, int>& p) 
     {
-        cout << "   " << pair.first << "    " << pair.second << endl;
+        cout << "   " << p.first << "    " << p.second << endl;
     });
 
     return 0;
