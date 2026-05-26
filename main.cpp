@@ -7,20 +7,20 @@
 
 using namespace std;
 
+/**
+ * @brief Точка входа в программу.
+ * @return int 0 при успешном завершении работы программы.
+ */
 int main() 
 {
     setlocale(LC_ALL, "RU");
     
     vector<int> V;
-    int n;
     
-    cout << "Введите количество элементов вектора: ";
-    cin >> n;
-    
-    cout << "Введите " << n << " целых чисел:" << endl;
-    
-    copy_n(istream_iterator<int>(cin), n, back_inserter(V));
-    
+    cout << "Введите целые числа:" << endl;
+
+    copy(istream_iterator<int>(cin), istream_iterator<int>(), back_inserter(V));
+
     cout << "\nИсходный вектор V: ";
     for_each(V.begin(), V.end(), [](int value) 
     {
